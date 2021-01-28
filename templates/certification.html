@@ -1,0 +1,32 @@
+<div id="block-cert" class="pure-u-1 pure-u-md-1-2" >
+    <h4>{{ section.cert_title }}</h4>
+    <div class="row recognitions">
+    {% for each_cert in cert["items"] %}
+    <div class="large-12 small-12 columns">
+        <div class="row">
+            <div class="large-3 medium-3 small-4 columns">
+                {% if each_cert.short_name %}
+                    <div class="position">{{ each_cert.short_name }}</div>
+                {% endif %}
+
+                {% if each_cert.logo %}
+                    <img src="../static/img/{{ each_cert.logo }}" width="100" height="131" alt="{{ each_cert.title }}" class="ribbon">
+                {% else %}
+                    <img src="../static/img/ribbon.svg" width="100" height="131" alt="{{ each_cert.title }}" class="ribbon">
+                {% endif %}
+            </div>
+
+            <div class="large-9 medium-9 small-8 columns">
+                <div class="recog_data">
+                    <div class="title"><b>{{ each_cert.title }}</b></div>
+                    <div class="desc">{{ each_cert.description }}</div>
+                    {% if each_cert.place %}
+                    <div class="place">{{ each_cert.place }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>

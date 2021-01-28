@@ -1,0 +1,9 @@
+cssmin==0.2.0
+Jinja2==2.10.1
+jsmin==2.2.2
+Markdown==3.1.1
+MarkupSafe==1.1.1
+pdfkit==0.6.1
+ply==3.11
+simplejson==3.16.0
+webassets==0.12.1

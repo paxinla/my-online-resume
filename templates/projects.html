@@ -1,0 +1,14 @@
+<div id="block-project" class="pure-u-1" >
+    <h4>{{ section.project_title }}</h4>
+    <div id="project-stories" class="pure-g" >
+    {% for each_project in projects %}
+        {% if loop.index > 1 %}
+        <hr/>
+        {% endif %}
+
+        <div class="pure-u-1 project-story" >
+            {{ each_project.project_content }}
+        </div>
+    {% endfor %}
+    </div>
+</div>

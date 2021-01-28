@@ -1,0 +1,24 @@
+{
+  "main_skills": [
+                   {
+                     "name": "Python/Scala",
+                     "level": 5
+                   },
+                   {
+                     "name": "OLAP 数据仓库/数据治理/建模集成/ETL",
+                     "level": 5
+                   },
+                   {
+                     "name": "OLTP 数据库方案设计优化",
+                     "level": 4
+                   },
+                   {
+                     "name": "离线/准实时海量数据处理方案设计落地",
+                     "level": 4
+                   }
+                 ],
+  "other_skills": [
+                    "其他常用语言：SQL、Bash、Rust、Clojure",
+                    "其他常用工具：PostgreSQL、Hadoop/Spark、RabbitMQ、MongoDB、Kettle"
+                  ]
+}

@@ -1,0 +1,150 @@
+<html lang="zh-CN" >
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="{{ style_prefix }}/static/img/favicon.png" rel="icon" type="image/png" />
+        <link href="{{ style_prefix }}/static/css/{{ style_css }}" rel="stylesheet" type="text/css" media="screen" />
+
+        <title>Charles's Resume Print Friendly Version</title>
+    </head>
+    <body >
+        <div id="whole-page" class="pure-g" >
+            <div class="pure-u-3-24" style="display:block;"></div>
+            <div id="content-area" class="pure-u-18-24" style="display:block;" >
+                <div id="block-header" class="pure-g" >
+                    <div id="block-avatar" class="pure-u-1 pure-u-md-1-5" >
+                        <img id="user-avatar" src="{{ style_prefix }}/static/img/avatar.jpg" />
+                    </div>
+
+                    <div id="block-myname" class="pure-u-1 pure-u-md-4-5" >
+                        <h2>{{ banner.myname }}</h2>
+                        <h6><a id="github-link" href="{{ banner.mygithub }}"> {{ banner.mygithub }}</a></h6>
+                        <h6>[{{ section.view_online_version }} <a href="{{ banner.html_version }}"><b> {{ banner.html_version }}</b></a>  ] </h6>
+                    </div>
+
+                    <div id="block-contact" class="pure-u-1 pure-u-md-1-3" >
+                        <h4><b>{{ section.banner_contact }}</b></h4>
+                        <ul id="print-contact" class="no-bullet">
+                            <li class="contact-mail"> {{ banner.myemail }}</li>
+                            <li class="contact-mobile"> {{ banner.mymobile }}</li>
+                        </ul>
+                    </div>
+
+                    <div id="block-options" class="pure-u-1 pure-u-md-2-3" >
+                        {% if target_jobname %}
+                            <h4><b>{{ section.target_company }}: {{ target_company }}</b></h4>
+                            <h6><b>{{ section.target_jobname }}: {{ target_jobname }}</b></h6>
+                        {% else %}
+                            <h4><b>{{ section.banner_jobexp }}</b></h4>
+                            <ul class="no-bullet">
+                                <li class="exp-position">{{ section.work_exp_job }}：{{ banner.my_exp_position }}</li>
+                                <li class="exp-salary">{{ section.work_exp_salary }}：{{ banner.my_exp_salary }}</li>
+                                <li class="exp-location">{{ section.work_exp_city }}：{{ banner.my_exp_workcity }}</li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div id="block-detail-lists" >
+                    <div id="block-introduction" class="pure-u-1 content-block" >
+                        <div class="pure-u-1 keep-together" ><h4 class="content-block-title"><b>{{ section.intro_title }}</b></h4></div>
+                        <div class="pure-u-1 keep-together" >
+                        {{ intro_text }}
+                        </div>
+                    </div>
+
+                    <div id="block-technology" class="pure-g content-block" >
+                        <div class="pure-u-1" ><h4 class="content-block-title"><b>{{ section.skill_title }}</b></h4></div>
+                        <div class="indent-content" >
+                            <div id="block-main-stack" class="pure-u-1 pure-u-md-2-3 keep-together" >
+                                <h6><span id="main-skill-title"><b>{{ section.skill_main_title }}</b></span></h6>
+                                <ul class="keep-together">
+                                    {% for main_skill in stack["main_skills"] %}
+                                    <li>{{ main_skill.name }} : {% for i in main_skill.level %}★{% endfor %}{% for i in main_skill.rest_level %}☆{% endfor %}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div id="block-other-stack" class="pure-u-1 pure-u-md-1-3 keep-together" >
+                                {% if stack.other_skills %}
+                                <h6><span id="other-skill-title">{{ section.skill_other_title }}</span></h6>
+                                <ul>
+                                    {% for other_skill in stack["other_skills"] %}
+                                    <li> {{ other_skill }}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="block-job" class="pure-g content-block" >
+                        <div class="pure-u-1 pure-u-md-1-5 keep-together" >
+                            <h4 class="content-block-title"><b>{{ section.jobs_title }}</b></h4>
+                        </div>
+
+                        <div class="pure-u-1 pure-u-md-4-5 keep-together" >
+                        <ol>
+                          {% for each_job in job["items"] %}
+                          <li>{{ each_job.company }} -- {{ each_job.position }} , {{ each_job.duration }}{{ section.year_unit }}, {{ section.word_from }} {{ each_job.start }} {{ section.word_from_2 }}</li>
+                          {% endfor %}
+                        </ol>
+                        </div>
+                    </div>
+
+                    <div id="block-education" class="pure-g content-block" >
+                        <div class="pure-u-1 pure-u-md-1-5 keep-together" >
+                            <h4 class="content-block-title"><b>{{ section.edu_title }}</b></h4>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 keep-together" >
+                        <ul>
+                           {% for each_edu in edu["items"] %}
+                           <li>{{ each_edu.start }}~{{ each_edu.end }} {{ each_edu.school }} {{ each_edu.major }}</li>
+                           {% endfor %}
+                        </ul>
+                        </div>
+                    </div>
+
+                    <div id="block-certification" class="pure-g content-block" >
+                        <div class="pure-u-1 pure-u-md-1-5 keep-together" >
+                            <h4 class="content-block-title"><b>{{ section.cert_title }}</b></h4>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-4-5 keep-together" >
+                            <ul class="no-bullet">
+                              {% for each_cert in cert["items"] %}
+                              <li class="fi-bookmark"> {{ each_cert.title }} | {{ each_cert.description }} </li>
+                              {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <div id="block-projects" class="content-block pure-g" >
+                        <div class="pure-u-1" >
+                            <h4 class="content-block-title"><b>{{ section.project_title }}</b></h4>
+                        </div>
+
+                        {% for each_project in projects %}
+                        <div class="pure-u-1" ><hr/></div>
+                        <div class="pure-u-1 pure-u-md-3-24"> </div>
+                        <div class="pure-u-1 pure-u-md-21-24 project-story keep-together" >
+                            {{ each_project.project_content }}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <hr/>
+
+                    <div id="block-endnote" class="keep-together" >
+                        <h3>{{ endnote.title }}</h3>
+                        <p>{{ endnote.remark }}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pure-u-3-24" style="display:block;"></div>
+        </div>
+    </body>
+</html>

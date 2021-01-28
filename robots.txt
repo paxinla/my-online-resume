@@ -1,0 +1,88 @@
+User-agent: Baiduspider
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: Googlebot
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: 360Spider
+ 
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+ 
+User-agent: msnbot
+ 
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: Sosospider
+ 
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: YoudaoBot
+ 
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: bingbot 
+ 
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: Sogou web spider/4.0
+Allow: /
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.text$
+Disallow: /*.jpeg$
+Disallow: /*.gif$
+Disallow: /*.png$
+Disallow: /*.bmp$
+ 
+User-agent: *
+Disallow: /

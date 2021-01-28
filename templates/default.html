@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 9]><html class="lt-ie10" lang="en"> <![endif]-->
+<html lang="zh-CN" >
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="refresh" content="url={{ default_cv_html }}" />
+
+        <title>Charles's Resume</title>
+    </head>
+
+    <body onselectstart="return false" >
+        默认显示简历：<a href="{{ default_cv_html }}">{{ default_cv_html }}</a>
+        <script type="text/javascript"> 
+            window.location.replace("{{ default_cv_html }}")
+        </script>
+    </body>
+</html>

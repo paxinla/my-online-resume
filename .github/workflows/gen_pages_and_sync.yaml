@@ -1,0 +1,92 @@
+name: Generate Pages and Synchronize to Mirror Repository
+
+on:
+  push:
+    branches:
+    - master
+
+env:
+  LANG: "zh_CN.UTF-8"
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-16.04
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set Locale
+      run: |
+        sudo locale-gen zh_CN.UTF-8
+        sudo update-locale LANG=zh_CN.UTF-8
+
+    - name: Install system packages
+      run: |
+        sudo apt-get install fonts-droid-fallback ttf-dejavu ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+        sudo apt-get install wget libpng12-0 libssl1.0.0 xfonts-base xfonts-75dpi
+        wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb
+        sudo dpkg -i wkhtmltox_0.12.5-1.xenial_amd64.deb
+        sudo apt-get install xvfb
+        sudo apt-get install firefox
+
+    - name: Setup wkhtmltopdf tool
+      run: |
+        sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin/wkhtmltopdf_bin
+        echo -e '#!/bin/bash\nxvfb-run -a --server-args="-screen 0, 1024x768x24" /usr/bin/wkhtmltopdf_bin -q $*' | sudo tee /usr/bin/wkhtmltopdf
+        sudo chmod a+x /usr/bin/wkhtmltopdf
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+        architecture: 'x64'
+
+    - name: Install python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Generate HTML pages and other files
+      run: |
+        python run.py --to all --server
+        cd output
+        if [ -f cn/print.html ]; then rm cn/print.html ; fi
+        if [ -f en/print.html ]; then rm en/print.html ; fi
+        cd ../
+
+    - name: Deploy github pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./output
+        publish_branch: gh-pages
+
+    - name: Mirror github pages to gitee pages
+      run: |
+        cd output
+        mkdir -p mirror/cn
+        cp -r static mirror/
+        cp cn/cv_charles.pdf mirror/cn/
+        cp ../LICENSE mirror/
+        sed 's#'${{ secrets.HUB_USER }}'.github.io/'${{ secrets.HUB_REPO_NAME }}'#'${{ secrets.GITEE_USER }}'.gitee.io/'${{ secrets.HUB_REPO_NAME }}'-mirror#g' index.html > mirror/index.html
+        sed 's#'${{ secrets.HUB_USER }}'.github.io/'${{ secrets.HUB_REPO_NAME }}'#'${{ secrets.GITEE_USER }}'.gitee.io/'${{ secrets.HUB_REPO_NAME }}'-mirror#g' cn/index.html > mirror/cn/index.html
+        cd mirror
+        echo '![SVG](https://svg.hamm.cn/badge.svg?key=Status&value=OK&color=fe7300&radius=3 "SVG")' > README.md
+        echo -e '\n\nThis is a mirror repository of Github.' >> README.md
+        git config --global user.email ${{ secrets.GITEE_USER_MAIL }}
+        git config --global user.name ${{ secrets.GITEE_USER }}
+        git init
+        git remote add gitee https://${{ secrets.GITEE_USER }}:${{ secrets.GITEE_PASSWORD }}@gitee.com/${{ secrets.GITEE_USER }}/${{ secrets.HUB_REPO_NAME }}-mirror.git
+        git add -A
+        git commit -m "sync Github"
+        git push -f -q gitee master
+        cd .. && rm -rf mirror
+
+    - name: Refresh Gitee web pages
+      uses: yanglbme/gitee-pages-action@main
+      with:
+        gitee-username: ${{ secrets.GITEE_USER }}
+        gitee-password: ${{ secrets.GITEE_PASSWORD }}
+        gitee-repo: ${{ secrets.GITEE_USER }}/${{ secrets.HUB_REPO_NAME }}-mirror
+        branch: master

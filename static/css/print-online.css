@@ -1,0 +1,172 @@
+.keep-together {
+  page-break-inside: avoid !important;
+}
+
+#block-header {
+  margin-top: 20px;
+  background-color: #e9ecef;
+}
+
+#block-avatar {
+  text-align: center;
+}
+
+img#user-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 6rem;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#github-link {
+  padding-left: 25px; 
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/svg/fi-social-github.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:20px 20px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#block-myname, #block-contact, #block-options {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+li.contact-mobile {
+  padding-left: 30px; 
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-phone.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+li.contact-mail {
+  padding-left: 30px; 
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-mail.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:21px 21px;
+  line-height: 30px;
+  height: 30px;
+  font-family: 'DejaVu Sans Mono';
+  font-style: normal;
+}
+
+.content-block {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.indent-content {
+  padding-left: 3rem;
+}
+
+.content-block-title {
+  padding-left: 30px; 
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-forward.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#block-introduction p {
+  text-indent: 2em;
+}
+
+#main-skill-title {
+  padding-left: 30px;
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-rocket.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size: 21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#other-skill-title {
+  padding-left: 30px;
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-hammer.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size: 21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#block-technology li {
+  list-style-type: none;
+  padding-left: 30px;
+  background-image: url(http://paxinla.github.io/my-online-resume/static/icons/png/icon-right-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size: 18px 18px;
+  margin-left: 1.6rem;
+}
+
+#block-job li {
+  margin-left: 1rem;
+}
+
+#block-education li {
+  list-style-type: none;
+  padding-left: 30px;
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-major.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size: 18px 18px;
+}
+
+#block-certification li {
+  list-style-type: none;
+  padding-left: 30px;
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-badge.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size: 18px 18px;
+  margin-left: 1rem;
+}
+
+hr {
+  display: block;
+  width: 40%;
+  height: 0px;
+  margin: 40px auto 34px;
+  border-width: 3px 0px 0px;
+  border-color: #3A4145;
+}
+
+#block-projects hr {
+  display: block;
+  width: 80%;
+  height: 0px;
+  margin: 40px auto 34px;
+  border-style: dashed;
+  border-width: 2px 0px 0px;
+  border-color: rgb(178,187,190);
+}
+
+.project-story {
+  border: 0px; 
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+#block-endnote {
+  text-align: center;
+}

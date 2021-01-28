@@ -1,0 +1,14 @@
+<div id="block-edu" class="pure-u-1 pure-u-md-1-2" >
+    <h4>{{ section.edu_title }}</h4>
+    <div class="edu-surround">
+        <div class="edu">
+        {% for each_edu in edu["items"] %}
+            <div class="edu-item">
+                <div class="date">{{ section.word_from }} {{ each_edu.start }} {{ section.word_to }} {{ each_edu.end }}</div>
+                <div class="topic majoritem">{{ each_edu.major }}</div>
+                <div class="school schoolitem">{{ each_edu.school }}</div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>

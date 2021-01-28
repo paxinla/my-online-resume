@@ -1,0 +1,25 @@
+{
+  "items": [
+             {
+               "company": "八斗智能科技（广州）有限公司",
+               "position": "Data Engineer",
+               "start": "2019",
+               "end": "",
+               "duration": 1
+             },
+             {
+               "company": "深圳爱拼信息科技有限公司",
+               "position": "Data Engineer",
+               "start": "2015",
+               "end": "2019",
+               "duration": 3
+             },
+             {
+               "company": "深圳四方精创资讯股份有限公司",
+               "position": "研发级DBA",
+               "start": "2012",
+               "end": "2015",
+               "duration": 3
+             }
+           ]
+}

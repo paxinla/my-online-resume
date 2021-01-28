@@ -1,0 +1,10 @@
+<div id="block-announcement" class="pure-u-1 pure-u-md-1-2" >
+    <h4>{{ section.announce_title }}</h4>
+    <div class="statement">
+    {% if statements %}
+        {% for stm in statements %}
+            {{ stm }} <br/>
+        {% endfor %}
+    {% endif %}
+    </div>
+</div>

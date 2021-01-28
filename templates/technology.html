@@ -1,0 +1,33 @@
+<div id="block-skill" class="pure-u-1 pure-u-md-1-2" >
+    <h4>{{ section.skill_title }}</h4> 
+    <div class="pure-g" >
+        <div id="block-list-main" class="pure-u-1-2" >
+            <h6><span id="main-skill-title"><b>{{ section.skill_main_title }}</b></span></h6>
+            {% for main_skill in stack["main_skills"] %}
+            <ul class="small-block-grid-2">
+                <li class="name"><i class="fas fa-angle-right"></i> {{ main_skill.name }}</li>
+                {% if main_skill.level %}
+                <li>
+                    {% for i in main_skill.level %}
+                    <span class="fa fa-star checked"></span>
+                    {% endfor %}
+                    {% for i in main_skill.rest_level %}
+                    <span class="fa fa-star unchecked"></span>
+                    {% endfor %}
+                </li>
+                {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+
+        <div id="block-list-other" class="pure-u-1-2" >
+            {% if stack.other_skills %}
+            <h6><span id="other-skill-title">{{ section.skill_other_title }}</span></h6>
+                {% for other_skill in stack["other_skills"] %}
+                <ul class="small-block-grid-1"><li class="name"><i class="fas fa-angle-right"></i> {{ other_skill }}</li></ul>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+    </div>
+</div>

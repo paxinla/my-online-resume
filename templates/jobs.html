@@ -1,0 +1,20 @@
+<div id="block-job" class="pure-u-1 pure-u-md-1-2" >
+    <h4>{{ section.jobs_title }}</h4>
+    <div class="pure-g" >
+        {% for each_job in job["items"] %}
+         <div class="pure-u exp-item">
+             <div class="pure-u-1-5 year">
+                 <span class="job-year">{{ each_job.duration }}</span>
+                 {%- if section.year_unit -%}
+                 <span class="job-year-unit">{{ section.year_unit }}</span>
+                 {%- endif %}
+             </div>
+             <div class="pure-u-4-5 exp-data">
+                 <div class="date">{{ each_job.start }} ~&gt; </div>
+                 <div class="role">{{ each_job.position }}</div>
+                 <div class="company">{{ each_job.company }}</div>
+             </div>
+         </div>
+        {% endfor %}
+    </div>
+</div>

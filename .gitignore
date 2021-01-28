@@ -1,0 +1,7 @@
+*.swp
+*.log
+*.pdf
+output
+__pycache__
+ENV
+static/.webassets-cache
