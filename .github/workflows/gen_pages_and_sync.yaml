@@ -61,6 +61,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./output
         publish_branch: gh-pages
+        force_orphan: true
 
     - name: Mirror github pages to gitee pages
       run: |
