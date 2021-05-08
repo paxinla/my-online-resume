@@ -2,120 +2,15 @@
   page-break-inside: avoid !important;
 }
 
-#block-header {
-  margin-top: 20px;
-  background-color: #e9ecef;
+
+.FT4 {
+  font-size:1.4375rem;
+  font-weight: 700;
 }
 
-#block-avatar {
-  text-align: center;
-}
-
-img#user-avatar {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 6rem;
-  padding: 0;
-  margin-top: 10px;
-}
-
-#github-link {
-  padding-left: 25px; 
-  background: url(../icons/svg/fi-social-github.svg) no-repeat center left transparent; 
-  background-size:20px 20px;
-  line-height: 30px;
-  height: 30px;
-}
-
-#block-myname, #block-contact, #block-options {
-  margin-top: 1rem;
-  padding-left: 1rem;
-}
-
-li.contact-mobile {
-  padding-left: 30px; 
-  background: url(../icons/png/icon-phone.png) no-repeat center left transparent; 
-  background-size:21px 21px;
-  line-height: 30px;
-  height: 30px;
-}
-
-li.contact-mail {
-  padding-left: 30px; 
-  background: url(../icons/png/icon-mail.png) no-repeat center left transparent; 
-  background-size:21px 21px;
-  line-height: 30px;
-  height: 30px;
-  font-family: 'DejaVu Sans Mono';
-  font-style: normal;
-}
-
-.content-block {
-  margin-top: 2rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.indent-content {
-  padding-left: 3rem;
-}
-
-.content-block-title {
-  padding-left: 30px; 
-  background: url(../icons/png/icon-forward.png) no-repeat center left transparent; 
-  background-size:21px 21px;
-  line-height: 30px;
-  height: 30px;
-}
-
-#block-introduction p {
-  text-indent: 2em;
-}
-
-#main-skill-title {
-  padding-left: 30px;
-  background: url(../icons/png/icon-rocket.png) no-repeat center left transparent;
-  background-size: 21px 21px;
-  line-height: 30px;
-  height: 30px;
-}
-
-#other-skill-title {
-  padding-left: 30px;
-  background: url(../icons/png/icon-hammer.png) no-repeat center left transparent;
-  background-size: 21px 21px;
-  line-height: 30px;
-  height: 30px;
-}
-
-#block-technology li {
-  list-style-type: none;
-  padding-left: 30px;
-  background: url(../icons/png/icon-right-arrow.png) no-repeat left 4px transparent;
-  background-size: auto;
-  background-size: 18px 18px;
-  margin-left: 1.6rem;
-}
-
-#block-job li {
-  margin-left: 1rem;
-}
-
-#block-education li {
-  list-style-type: none;
-  padding-left: 30px;
-  background: url(../icons/png/icon-major.png) no-repeat left 4px transparent;
-  background-size: auto;
-  background-size: 18px 18px;
-}
-
-#block-certification li {
-  list-style-type: none;
-  padding-left: 30px;
-  background: url(../icons/png/icon-badge.png) no-repeat left 4px transparent;
-  background-size: auto;
-  background-size: 18px 18px;
-  margin-left: 1rem;
+.FT6 {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 hr {
@@ -127,21 +22,274 @@ hr {
   border-color: #3A4145;
 }
 
-#block-projects hr {
-  display: block;
-  width: 80%;
-  height: 0px;
-  margin: 40px auto 34px;
-  border-style: dashed;
-  border-width: 2px 0px 0px;
-  border-color: rgb(178,187,190);
+.content-block {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-top: 1em;
 }
+
+
+#block-myname {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#my-nick-name {
+  font-size: 2.1rem;
+  vertical-align: middle;
+}
+
+#user-avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  margin-left: 20px;
+  margin-top: 1px;
+}
+
+#print-tips {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 1em;
+}
+
+#block-contact {
+  text-align: center;
+  background-color: #e9ecef;
+  margin-top: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.con-sep {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.contact-mail {
+  padding-left: 20px; 
+  background-image: url(../icons/svg/icon-mail.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:18px 18px;
+  line-height: 30px;
+  height: 30px;
+  font-family: 'DejaVu Sans Mono';
+  font-style: normal;
+}
+
+.contact-mobile {
+  padding-left: 20px; 
+  background-image: url(../icons/png/icon-phone.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:18px 18px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#github-link {
+  padding-left: 20px; 
+  background-image: url(../icons/svg/icon-github.svg);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:18px 18px;
+  line-height: 30px;
+  height: 30px;
+  text-decoration: none;
+}
+
+
+#block-options {
+  text-align: center;
+  margin-top: 1em;
+}
+
+
+#block-detail-lists {
+  margin-top: 1em;
+}
+
+
+#block-introduction {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px 1px #1f1f1f;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 80%;
+  margin-left: 15%;
+}
+
+#block-introduction p {
+  text-indent: 2em;
+}
+
+.content-block-title {
+  border: 0;
+  border-top: 2px solid #ccc;
+  padding: 0;
+}
+
+.content-block-title-text {
+  margin: 0 auto;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+
+#block-main-stack {
+  padding-left: 1rem;
+}
+
+#main-skill-title {
+  padding-left: 30px;
+  background: url(../icons/png/icon-rocket.png) no-repeat center left transparent;
+  background-size: auto;
+  background-size: 21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#block-other-stack {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#other-skill-title {
+  padding-left: 30px;
+  background: url(../icons/png/icon-hammer.png) no-repeat center left transparent;
+  background-size: auto;
+  background-size: 21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+#block-technology li {
+  list-style-type: none;
+  padding-left: 30px;
+  background: url(../icons/png/icon-right-arrow.png) no-repeat left 4px transparent;
+  background-size: auto;
+  background-size: auto;
+  background-size: 18px 18px;
+}
+
+
+#history-experience {
+  flex-flow: unset;
+  -webkit-flex-flow: unset;
+}
+
+.content-block-title2 {
+  padding-left: 30px; 
+  background-image: url(https://paxinla.github.io/my-online-resume/static/icons/png/icon-forward.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: transparent;
+  background-size:21px 21px;
+  line-height: 30px;
+  height: 30px;
+}
+
+.indent-content {
+  padding-left: 3rem;
+}
+
+#block-certification {
+  display: inline-block;
+  background-color: #e9ecef;
+}
+
+#block-certification ul {
+  padding-left: 5px;
+}
+
+#block-certification li {
+  list-style-type: none;
+  padding-left: 30px;
+  background: url(../icons/png/icon-badge.png) no-repeat left 4px transparent;
+  background-size: auto;
+  background-size: auto;
+  background-size: 18px 18px;
+}
+
+
+#block-education {
+  padding-left: 2px;
+  padding-right: 2px;
+  display: inline-block;
+}
+
+#block-education ul {
+  padding-left: 5px;
+}
+
+#block-education li {
+  list-style-type: none;
+  padding-left: 30px;
+  background: url(../icons/png/icon-major.png) no-repeat left 4px transparent;
+  background-size: auto;
+  background-size: auto;
+  background-size: 18px 18px;
+}
+
+
+#block-job {
+  display: inline-block;
+  background-color: #e9ecef;
+}
+
+#block-job ol {
+  padding-left: 5px;
+}
+
+#block-job li {
+  padding-left: 1rem;
+}
+
 
 .project-story {
   border: 0px; 
   padding-top: 2rem;
   padding-bottom: 1rem;
 }
+
+#block-projects hr {
+  display: block;
+  width: 80%;
+  height: 0;
+  margin: 40px auto 34px;
+  border-style: dashed;
+  border-width: 2px 0 0;
+  border-color: #b2bbbe;
+}
+
+#block-projects code {
+  background-color: #f8f8f8;
+  border-color: #dfdfdf;
+  border-style: solid;
+  border-width: 1px;
+  color: #333;
+  font-family: Consolas,"Liberation Mono",Courier,monospace;
+  font-weight: normal;
+  font-size: 1em;
+  padding: .125rem .3125rem .0625rem;
+}
+
+#block-projects ul, #block-projects ol, #block-projects dl {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  list-style-position: outside;
+  margin-bottom: 1.25rem;
+  padding-left: 40px;
+}
+
 
 #block-endnote {
   text-align: center;
