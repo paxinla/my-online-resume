@@ -86,7 +86,8 @@ def html2pdf(src_html_file, des_pdf_file, server_mode):
     options = {
         "quiet": "",
         "encoding": "UTF-8",
-        "page-size": "A4"
+        "page-size": "A4",
+        'enable-local-file-access': None
     }
 
     if platform.system() == "Windows":
