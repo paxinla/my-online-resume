@@ -24,7 +24,9 @@ jobs:
     - name: Install system packages
       run: |
         sudo apt-get install fonts-droid-fallback ttf-dejavu ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
-        sudo apt-get install wget libpng12-0 libssl1.0.0 xfonts-base xfonts-75dpi
+        sudo apt-get install wget libssl1.0.0 xfonts-base xfonts-75dpi
+        wget https://launchpad.net/~ubuntu-security/+archive/ubuntu/ppa/+build/15108504/+files/libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
+        sudo dpkg -i libpng12-0_1.2.54-1ubuntu1.1_amd64.deb
         wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb
         sudo dpkg -i wkhtmltox_0.12.5-1.xenial_amd64.deb
         sudo apt-get install xvfb
