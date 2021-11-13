@@ -193,6 +193,7 @@ li.exp-salary {
 .exp-data {
   white-space: normal;
   margin-top: 3.2rem;
+  padding-left: 0.5rem;
 }
 
 .exp-data .date {
