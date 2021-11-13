@@ -78,9 +78,9 @@ ul.no-bullet {
 
 /* 圆形头像 */
 img#user-avatar {
-  height: 120px;
-  width: 120px;
-  border-radius: 120px;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 5rem;
   padding: 0px;
   margin: 0 0 20px 30px;
 }

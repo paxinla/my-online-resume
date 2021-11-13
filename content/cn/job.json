@@ -1,6 +1,13 @@
 {
   "items": [
              {
+               "company": "Starboard Ventures",
+               "position": "Data Engineer",
+               "start": "2021",
+               "end": "",
+               "duration": 0
+             },
+             {
                "company": "八斗智能科技（广州）有限公司",
                "position": "Data Engineer",
                "start": "2019",
