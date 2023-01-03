@@ -65,31 +65,3 @@ jobs:
         publish_branch: gh-pages
         force_orphan: true
 
-    - name: Mirror github pages to gitee pages
-      run: |
-        cd output
-        mkdir -p mirror/cn
-        cp -r static mirror/
-        cp cn/cv_charles.pdf mirror/cn/
-        cp ../LICENSE mirror/
-        sed 's#'${{ secrets.HUB_USER }}'.github.io/'${{ secrets.HUB_REPO_NAME }}'#'${{ secrets.GITEE_USER }}'.gitee.io/'${{ secrets.HUB_REPO_NAME }}'-mirror#g' index.html > mirror/index.html
-        sed 's#'${{ secrets.HUB_USER }}'.github.io/'${{ secrets.HUB_REPO_NAME }}'#'${{ secrets.GITEE_USER }}'.gitee.io/'${{ secrets.HUB_REPO_NAME }}'-mirror#g' cn/index.html > mirror/cn/index.html
-        cd mirror
-        echo '![SVG](https://svg.hamm.cn/badge.svg?key=Status&value=OK&color=fe7300&radius=3 "SVG")' > README.md
-        echo -e '\n\nThis is a mirror repository of Github.' >> README.md
-        git config --global user.email ${{ secrets.GITEE_USER_MAIL }}
-        git config --global user.name ${{ secrets.GITEE_USER }}
-        git init
-        git remote add gitee https://${{ secrets.GITEE_USER }}:${{ secrets.GITEE_PASSWORD }}@gitee.com/${{ secrets.GITEE_USER }}/${{ secrets.HUB_REPO_NAME }}-mirror.git
-        git add -A
-        git commit -m "sync Github"
-        git push -f -q gitee master
-        cd .. && rm -rf mirror
-
-    - name: Refresh Gitee web pages
-      uses: yanglbme/gitee-pages-action@main
-      with:
-        gitee-username: ${{ secrets.GITEE_USER }}
-        gitee-password: ${{ secrets.GITEE_PASSWORD }}
-        gitee-repo: ${{ secrets.GITEE_USER }}/${{ secrets.HUB_REPO_NAME }}-mirror
-        branch: master
