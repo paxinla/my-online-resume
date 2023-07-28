@@ -10,7 +10,13 @@
                 {% endif %}
 
                 {% if each_cert.logo %}
+                  {% if each_cert.link %}
+                    <a href="{{ each_cert.link }}" target="_blank">
+                      <img src="../static/img/{{ each_cert.logo }}" width="100" height="131" alt="{{ each_cert.title }}" class="ribbon">
+                    </a>
+                  {% else %}
                     <img src="../static/img/{{ each_cert.logo }}" width="100" height="131" alt="{{ each_cert.title }}" class="ribbon">
+                  {% endif %}
                 {% else %}
                     <img src="../static/img/ribbon.svg" width="100" height="131" alt="{{ each_cert.title }}" class="ribbon">
                 {% endif %}

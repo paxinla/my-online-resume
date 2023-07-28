@@ -1,9 +1,16 @@
 {
   "items": [
              {
+               "title": "PMP",
+               "description": "Project Management Professional",
+               "logo": "pmp-badge.png",
+               "link": "https://www.credly.com/badges/b7b7ddf3-a0f9-4c0b-8174-8926390b6b9e/public_url"
+             },
+             {
                "title": "OCP 11g",
                "description": "Oracle Certified Professional 11g",
-               "logo": "OCP-badge.jpg"
+               "logo": "OCP-badge.jpg",
+               "link": "https://www.credly.com/badges/f39026d7-8f89-4a1f-8062-86fbf38de6fa/public_url"
              },
              {
                "short_name": "国家软考",
