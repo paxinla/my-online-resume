@@ -1,0 +1,20 @@
+{
+  "main_skills": [
+                   {
+                     "name": "Python/Scala",
+                     "level": 5
+                   },
+                   {
+                     "name": "OLAP / ETL",
+                     "level": 5
+                   },
+                   {
+                     "name": "OLTP",
+                     "level": 4
+                   }
+                 ],
+  "other_skills": [
+                    "Prefer Programming Language: SQL, Bash, Clojure",
+                    "Familiar: PostgreSQL, Spark/Hadoop, RabbitMQ, MongoDB, Kettle"
+                  ]
+}

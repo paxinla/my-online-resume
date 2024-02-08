@@ -1,0 +1,16 @@
+{
+  "items": [
+            {
+              "school": "Chongqing University of Posts and Telecommunications",
+              "major": "Computer Science and Technology - Bachelor",
+              "start": "2008",
+              "end": "2012"
+            },
+            {
+              "school": "Chongqing University of Posts and Telecommunications",
+              "major": "Communication Engineering - Bachelor minor",
+              "start": "2008",
+              "end": "2012"
+            }
+           ]
+}

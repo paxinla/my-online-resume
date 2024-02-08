@@ -18,7 +18,7 @@
                    }
                  ],
   "other_skills": [
-                    "其他常用语言：SQL、Bash、Rust、Clojure",
+                    "其他常用语言：SQL、Bash、Clojure",
                     "其他常用工具：PostgreSQL、Hadoop/Spark、RabbitMQ、MongoDB、Kettle"
                   ]
 }
