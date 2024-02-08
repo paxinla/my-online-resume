@@ -10,7 +10,11 @@
                  {%- endif %}
              </div>
              <div class="pure-u-4-5 exp-data">
+                 {%- if each_job.end -%}
+                 <div class="date">{{ each_job.start }} ~&gt; {{ each_job.end }}</div>
+                 {%- else %}
                  <div class="date">{{ each_job.start }} ~&gt; </div>
+                 {%- endif %}
                  <div class="role">{{ each_job.position }}</div>
                  <div class="company">{{ each_job.company }}</div>
              </div>
