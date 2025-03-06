@@ -7,5 +7,5 @@
 
 ----------
 
-This is my personal online resume source. Please access [https://paxinla.github.io/my-online-resume/cn/](https://paxinla.github.io/my-online-resume/cn/) to view my online resume page.
+This is my personal online resume source. Please access [https://pxx.pages.dev](https://pxx.pages.dev) or [https://paxinla.github.io/my-online-resume/cn/](https://paxinla.github.io/my-online-resume/cn/) to view my online resume page.
 
