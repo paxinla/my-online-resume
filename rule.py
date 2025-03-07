@@ -40,6 +40,7 @@ def get_title_words(template_path, lang_name):
     rs["word_from_2"] = src["word_from_2"]
     rs["word_to"] = src["word_to"]
     rs["year_unit"] = src["year_unit"]
+    rs["year_unit_4prt"] = src["year_unit_4prt"]
     rs["skill_title"] = src["technology"]
     rs["skill_main_title"] = src["technology_main"]
     rs["skill_other_title"] = src["technology_other"]

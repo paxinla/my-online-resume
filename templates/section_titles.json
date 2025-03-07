@@ -17,6 +17,7 @@
         "word_from_2": "起",
         "word_to": "至",
         "year_unit": "年",
+        "year_unit_4prt": "年",
         "view_online_version": "这是方便打印的版本，良好排版请看",
         "target_company": "应聘公司",
         "target_jobname": "应聘职位"},
@@ -38,7 +39,8 @@
         "word_from": "Since",
         "word_from_2": "",
         "word_to": "to",
-        "year_unit": "year(s)",
+        "year_unit": "",
+        "year_unit_4prt": " year(s)",
         "view_online_version": "Online Version: ",
         "target_company": "Objective Company",
         "target_jobname": "Objective Position"}}
