@@ -35,10 +35,10 @@
         "education": "EDUCATION",
         "certification": "CERTIFICATE",
         "projects": "PROJECT",
-        "word_from": "From",
+        "word_from": "Since",
         "word_from_2": "",
         "word_to": "to",
-        "year_unit": "",
+        "year_unit": "year(s)",
         "view_online_version": "Online Version: ",
         "target_company": "Objective Company",
         "target_jobname": "Objective Position"}}
