@@ -23,7 +23,7 @@ jobs:
 
     - name: Install system packages
       run: |
-        sudo apt-get install fonts-droid-fallback ttf-dejavu ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+        sudo apt-get install fonts-droid-fallback fonts-dejavu fonts-wqy-zenhei fonts-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
         sudo apt-get install wget xfonts-base xfonts-75dpi
         wget http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
         sudo dpkg -i libssl1.0.0_1.0.2n-1ubuntu5_amd64.deb
