@@ -3,14 +3,17 @@ ENTRY = $(shell pwd)/run.py
 JOB = none
 COMPANY = none
 
-html:
+clean:
+	@test -d output && rm -rf output || true
+
+html: clean
 	$(PYRUN) $(ENTRY) --to html
 
-local:
+local: clean
 	$(PYRUN) $(ENTRY) --to local --company $(COMPANY) --job $(JOB)
 
-pdf:
+pdf: clean
 	$(PYRUN) $(ENTRY) --to pdf
 
-all:
+all: clean
 	$(PYRUN) $(ENTRY) --to all
