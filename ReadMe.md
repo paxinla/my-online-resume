@@ -2,8 +2,7 @@
 
 ![version](https://img.shields.io/badge/Version-%202.1.0-orange.svg)
 ![python](https://img.shields.io/badge/python-%203.7/ubuntu-blue.svg)
-[![Build Status](https://travis-ci.org/paxinla/my-online-resume.svg?branch=master)](https://travis-ci.org/paxinla/my-online-resume)
-
+[![Build Status](https://github.com/paxinla/my-online-resume//actions/workflows/gen_pages_and_sync.yaml/badge.svg?branch=master)](https://github.com/paxinla/my-online-resume/actions)
 
 ----------
 

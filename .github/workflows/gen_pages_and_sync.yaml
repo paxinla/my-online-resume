@@ -1,4 +1,4 @@
-name: Generate Pages and Synchronize to Mirror Repository
+name: Generate Resume Pages
 
 on:
   push:
