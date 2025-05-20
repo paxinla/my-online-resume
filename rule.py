@@ -9,6 +9,7 @@ from webassets import Bundle
 from config import CONFIG
 from mapfont import FontElements
 from util import locate_file, decode_base64, read_json_as_map, read_text_as_list, read_markdown_as_html, html2pdf, renew_path, copy_dirs, join_path, list_markdown_files
+from conf_projects_reduction import ignore_project_item_indexes
 
 
 TEMPLATE_ENVIRONMENT = Environment(autoescape=False,
@@ -134,6 +135,7 @@ def gen_default_jump_html(default_html_url):
 
 
 def render_html(target_langs, server_mode=False, local_mode=False, local_company=None, local_jobname=None):
+    import copy
     all_data = {}
 
     for each_lang in target_langs:
@@ -157,24 +159,31 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
 
         # 方便打印版本
         with open(locate_file(output_path, "print.html"), 'w', encoding="utf8") as wf:
-            all_data["banner"]["myavatar"] = all_data["banner"]["myavatar_offline"]
-            all_data["banner"]["mymobile"] = decode_base64(all_data["banner"]["mymobile_r"])
+            all_data_for_print = copy.deepcopy(all_data)
+
+            all_data_for_print["banner"]["myavatar"] = all_data["banner"]["myavatar_offline"]
+            all_data_for_print["banner"]["mymobile"] = decode_base64(all_data["banner"]["mymobile_r"])
 
             if local_mode:
                 assert local_jobname is not None
-                all_data["target_jobname"] = local_jobname
+                all_data_for_print["target_jobname"] = local_jobname
                 assert local_company is not None
-                all_data["target_company"] = local_company
+                all_data_for_print["target_company"] = local_company
 
             if server_mode:
-                all_data["style_prefix"] = CONFIG.CV_URL_ROOT
-                all_data["style_css"] = "mycv-print-online.css"
+                all_data_for_print["style_prefix"] = CONFIG.CV_URL_ROOT
+                all_data_for_print["style_css"] = "mycv-print-online.css"
             else:
-                all_data["style_prefix"] = ".."
-                all_data["style_css"] = "mycv-print.css"
+                all_data_for_print["style_prefix"] = ".."
+                all_data_for_print["style_css"] = "mycv-print.css"
+
+            # 打印版本里精简项目经历
+            all_project_counts = len(all_data["projects"])
+            masked_project_indexes = set( map( lambda x: all_project_counts - x, ignore_project_item_indexes()) )
+            all_data_for_print["projects"] = [ all_data["projects"][i] for i in range() if i not in masked_project_indexes ]
 
 
-            wf.write(TEMPLATE_ENVIRONMENT.get_template("print.html").render(all_data))
+            wf.write(TEMPLATE_ENVIRONMENT.get_template("print.html").render(all_data_for_print))
 
         if not local_mode:
             # 在线浏览版本
@@ -266,3 +275,4 @@ def copy_images():
     img_path = CONFIG.IMG_PATH_LOCAL
     renew_path(img_path)
     copy_dirs(CONFIG.IMG_SRC_PATH, img_path)
+

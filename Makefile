@@ -12,7 +12,7 @@ html: clean
 local: clean
 	$(PYRUN) $(ENTRY) --to local --company $(COMPANY) --job $(JOB)
 
-pdf: clean
+pdf: html
 	$(PYRUN) $(ENTRY) --to pdf
 
 all: clean
