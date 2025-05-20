@@ -180,7 +180,7 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
             # 打印版本里精简项目经历
             all_project_counts = len(all_data["projects"])
             masked_project_indexes = set( map( lambda x: all_project_counts - x, ignore_project_item_indexes()) )
-            all_data_for_print["projects"] = [ all_data["projects"][i] for i in range() if i not in masked_project_indexes ]
+            all_data_for_print["projects"] = [ all_data["projects"][i] for i in range(all_project_counts) if i not in masked_project_indexes ]
 
 
             wf.write(TEMPLATE_ENVIRONMENT.get_template("print.html").render(all_data_for_print))
