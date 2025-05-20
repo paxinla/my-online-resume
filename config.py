@@ -28,10 +28,13 @@ class CONFIG(object):
     ICO_PATH_LOCAL = os.path.join(STATIC_PATH, "icons")
 
     GITHUB_URL = "https://paxinla.github.io"
+    OUTPUT_HTML_FOR_DEFAULT_NAME = "index.html"
+    OUTPUT_HTML_FOR_PRINT_NAME = "print.html"
+    OUTPUT_PDF_FOR_PRINT_NAME = "pxx_resume_data_engineer.pdf"
     VERSION_URL = {"cn": {"HTML_VERSION_URL": GITHUB_URL + "/my-online-resume/cn/",
-                          "PDF_VERSION_URL": CV_URL_ROOT + "/cn/cv_charles.pdf"},
+                          "PDF_VERSION_URL": CV_URL_ROOT + f"/cn/{OUTPUT_PDF_FOR_PRINT_NAME}"},
                    "en": {"HTML_VERSION_URL": GITHUB_URL + "/my-online-resume/en/",
-                          "PDF_VERSION_URL": CV_URL_ROOT + "/en/cv_charles.pdf"}}
+                          "PDF_VERSION_URL": CV_URL_ROOT + f"/en/{OUTPUT_PDF_FOR_PRINT_NAME}"}}
 
     path_wkthmltopdf = r"D:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"
 

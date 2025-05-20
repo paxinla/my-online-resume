@@ -129,7 +129,8 @@ def target_lang():
 
 def gen_default_jump_html(default_html_url):
     output_path = CONFIG.OUTPUT_PATH
-    with open(locate_file(output_path, "index.html"), 'w', encoding="utf8") as wf:
+    output_index_html_name = CONFIG.OUTPUT_HTML_FOR_DEFAULT_NAME
+    with open(locate_file(output_path, output_index_html_name), 'w', encoding="utf8") as wf:
         all_data = { "default_cv_html": default_html_url }
         wf.write(TEMPLATE_ENVIRONMENT.get_template("default.html").render(all_data))
 
@@ -137,6 +138,10 @@ def gen_default_jump_html(default_html_url):
 def render_html(target_langs, server_mode=False, local_mode=False, local_company=None, local_jobname=None):
     import copy
     all_data = {}
+
+    index_html_name = CONFIG.OUTPUT_HTML_FOR_DEFAULT_NAME
+    print_html_name = CONFIG.OUTPUT_HTML_FOR_PRINT_NAME
+    print_pdf_name  = CONFIG.OUTPUT_PDF_FOR_PRINT_NAME
 
     for each_lang in target_langs:
         lang_dirname = each_lang.lower()
@@ -158,7 +163,7 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
         all_data["endnote"] = gen_endnote(content_path)
 
         # 方便打印版本
-        with open(locate_file(output_path, "print.html"), 'w', encoding="utf8") as wf:
+        with open(locate_file(output_path, print_html_name), 'w', encoding="utf8") as wf:
             all_data_for_print = copy.deepcopy(all_data)
 
             all_data_for_print["banner"]["myavatar"] = all_data["banner"]["myavatar_offline"]
@@ -187,7 +192,7 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
 
         if not local_mode:
             # 在线浏览版本
-            with open(locate_file(output_path, "index.html"), 'w', encoding="utf8") as wf:
+            with open(locate_file(output_path, index_html_name), 'w', encoding="utf8") as wf:
                 all_data["banner"]["myavatar"] = all_data["banner"]["myavatar_online"]
                 strwrk = FontElements()
                 all_data["banner"]["myname"] = strwrk.convert_string(all_data["banner"]["myname"])
@@ -201,12 +206,15 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
 
 def gen_pdf(target_langs, server_mode=False):
     """生成PDF文件"""
+    print_html_name = CONFIG.OUTPUT_HTML_FOR_PRINT_NAME
+    print_pdf_name  = CONFIG.OUTPUT_PDF_FOR_PRINT_NAME
+
     for each_lang in target_langs:
         lang_dirname = each_lang.lower()
         output_path = locate_file(CONFIG.OUTPUT_PATH, lang_dirname)
 
-        src_html_file = locate_file(output_path, "print.html")
-        des_pdf_file = locate_file(output_path, "cv_charles.pdf")
+        src_html_file = locate_file(output_path, print_html_name)
+        des_pdf_file = locate_file(output_path, print_pdf_name)
 
         html2pdf(src_html_file, des_pdf_file, server_mode)
 
