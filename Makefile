@@ -10,7 +10,7 @@ html: clean
 	$(PYRUN) $(ENTRY) --to html
 
 local: clean
-	$(PYRUN) $(ENTRY) --to local --company $(COMPANY) --job $(JOB)
+	$(PYRUN) $(ENTRY) --to local --company "$(COMPANY)" --job "$(JOB)"
 
 pdf: html
 	$(PYRUN) $(ENTRY) --to pdf

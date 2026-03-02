@@ -131,7 +131,9 @@ def gen_default_jump_html(default_html_url):
     output_path = CONFIG.OUTPUT_PATH
     output_index_html_name = CONFIG.OUTPUT_HTML_FOR_DEFAULT_NAME
     with open(locate_file(output_path, output_index_html_name), 'w', encoding="utf8") as wf:
-        all_data = { "default_cv_html": default_html_url }
+        all_data = { "default_cv_html": default_html_url,
+                     "html_meta": { "title_name": CONFIG.OUTPUT_HTML_TITLE }
+                   }
         wf.write(TEMPLATE_ENVIRONMENT.get_template("default.html").render(all_data))
 
 
@@ -149,6 +151,8 @@ def render_html(target_langs, server_mode=False, local_mode=False, local_company
         output_path = locate_file(CONFIG.OUTPUT_PATH, lang_dirname)
 
         renew_path(output_path)
+
+        all_data["html_meta"] = {"title_name": CONFIG.OUTPUT_HTML_TITLE}
 
         all_data["section"] = get_title_words(CONFIG.TEMPLATE_PATH, lang_dirname)
 
