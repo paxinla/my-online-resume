@@ -1,5 +1,11 @@
 # Pxx's Online Resume (Clojure)
 
+![version](https://img.shields.io/badge/Version-%203.0.1-orange.svg)
+![clojure](https://img.shields.io/badge/clojure-%201.12-blue.svg)
+[![Build Status](https://github.com/paxinla/my-online-resume//actions/workflows/gen_pages_and_sync.yaml/badge.svg?branch=master)](https://github.com/paxinla/my-online-resume/actions)
+
+----------
+
 基于 [powerpack](https://github.com/cjohansen/powerpack) 的个人在线简历生成器。
 读取 `content/` 下的简历内容，结合 `themes/` 下的主题模板与静态资源，
 生成可部署的静态站点（HTML）与 PDF 简历（经本地 wkhtmltopdf）。

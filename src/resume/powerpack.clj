@@ -38,7 +38,9 @@
   [{:keys [config font-map server? dev?] :as ctx}]
   (alter-var-root #'*current-cfg* (constantly config))
   (cond-> {:site/title                    (:site-title config)
-   :site/base-url                 (:cv-url-root config)
+   ;; 不传 :site/base-url：powerpack 的 strip-base-url 会把以 base-url 开头的
+   ;; 资源 URL（如在线头像）削成根相对路径，部署在子路径下即 404；
+   ;; 省略后全部 img/script URL 原样透传（判定为外链，不做改写）。
    :site/default-locale           :zh
    :datomic/schema-file             "resources/schema.edn"
    ;; 不用 powerpack 内容管线：后缀列表永不匹配，ingest-all 空转后
