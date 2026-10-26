@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 9]><html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="zh-CN" >
+    <head >
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../static/img/favicon.png" rel="icon" type="image/png" />
+        <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" type="text/css" />
+        <link href="../static/css/mycv-all.css" rel="stylesheet" type="text/css" />
+        <script src="../static/js/mycv-pre.js" type='text/javascript' ></script>
+
+        <title>{{ html_meta.title_name }}</title>
+    </head>
+
+    <body onselectstart="return false;" oncopy="return false;" oncut="return false;" >
+        {% block cv_components %}
+        {% endblock %}
+
+        <a id="gotoTop" href="#" onclick="pageScroll();return false;" alt="返回顶部" ></a>
+    </body>
+</html>

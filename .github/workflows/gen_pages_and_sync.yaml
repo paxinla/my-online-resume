@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v7
 
     - name: Set Locale
       run: |
@@ -40,20 +40,23 @@ jobs:
         echo -e '#!/bin/bash\nxvfb-run -a --server-args="-screen 0, 1024x768x24" /usr/bin/wkhtmltopdf_bin -q $*' | sudo tee /usr/bin/wkhtmltopdf
         sudo chmod a+x /usr/bin/wkhtmltopdf
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
+    - name: Setup Java 17
+    - uses: actions/setup-java@v6
       with:
-        python-version: '3.11'
+        distribution: temurin
+        java-version: '17'
         architecture: 'x64'
+    - run: java --version
 
-    - name: Install python dependencies
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@13.7
+        with:
+          cli: 1.12.3.1577
+    - run: clojure --version
 
     - name: Generate HTML pages and other files
       run: |
-        python run.py --to all --server
+        make all
         cd output
         if [ -f cn/print.html ]; then rm cn/print.html ; fi
         if [ -f en/print.html ]; then rm en/print.html ; fi

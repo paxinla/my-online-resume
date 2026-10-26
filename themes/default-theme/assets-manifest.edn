@@ -1,0 +1,32 @@
+;; 资产打包矩阵：声明各输出 bundle 的输入顺序与复制目录。
+;; resume.assets 依据本清单执行打包（替代旧实现的 webassets）。
+{:bundles
+ [{:name    "css/mycv-all.css"
+   :inputs  ["css/base-min.css"
+             "css/grids-min.css"
+             "css/grids-responsive-min.css"
+             "css/foundation.min.css"
+             "#fontmap#"
+             "css/style4.css"
+             "css/mycustom.css"]}
+  {:name    "css/mycv-print.css"
+   :inputs  ["css/base-min.css"
+             "css/grids-min.css"
+             "css/grids-responsive-min.css"
+             "css/foundation.min.css"
+             "css/print.css"]}
+  {:name    "css/mycv-print-online.css"
+   :inputs  ["css/base-min.css"
+             "css/grids-min.css"
+             "css/grids-responsive-min.css"
+             "css/foundation.min.css"
+             "css/print-online.css"]
+   :substitute [["@@CV-URL-ROOT@@" :cv-url-root]]}
+  {:name   "js/mycv-pre.js"
+   :inputs ["js/antiband.js"
+            "js/scrolltop.js"
+            "js/mobile-guard.js"]}]
+
+ ;; 整目录复制到 output/static/ 下的目录（键=主题内目录，值=输出子目录名）
+ :copy {"icons" "icons"
+        "img"   "img"}}

@@ -1,0 +1,11 @@
+{:paths   ["src" "resources"]
+ :deps    {org.clojure/clojure             {:mvn/version "1.12.3"}
+           no.cjohansen/powerpack          {:mvn/version "2026.01.1"}
+           selmer/selmer                   {:mvn/version "1.12.59"}
+           markdown-clj/markdown-clj        {:mvn/version "1.12.10"}}
+ :aliases
+ {:run   {:main-opts ["-m" "resume.core"]}
+  :dev   {:extra-paths ["."]}
+  :build {:extra-paths ["."]
+          :deps        {io.github.clojure/tools.build {:mvn/version "0.10.5"}}
+          :ns-default  build}}}

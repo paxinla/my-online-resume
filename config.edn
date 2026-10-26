@@ -1,0 +1,35 @@
+;; pxx-online-resume 配置。由命令行 --config 传入，不放入代码 resources。
+{;; 路径（相对项目根，可写绝对路径）
+ :content-dir    "content"
+ :themes-dir     "themes"
+ :theme          "default-theme"
+ :output-dir     "output"
+
+ ;; PDF：wkhtmltopdf 可执行文件。nil = 使用系统 PATH 中的 wkhtmltopdf
+ :wkhtmltopdf    nil
+ :pdf-options    {:page-size "A4"
+                  :encoding  "UTF-8"}
+
+ ;; 站点
+ :site-title     "Pxx's Resume"
+ :cv-url-root    "https://paxinla.github.io/my-online-resume"
+ :github-url     "https://paxinla.github.io"
+
+ ;; 语言：顺序即优先级（降序）。cn 必须第一：它是唯一源语言（先编辑 cn，其余语言
+ ;; 由它翻译而来）。第一个语言 = 默认语言，生成根 index.html 跳转页。
+ :languages      ["cn" "en"]
+
+ ;; 输出文件名
+ :output-files   {:html-index "index.html"
+                  :html-print "print.html"
+                  :pdf-print  "resume_data_engineer_pxx.pdf"}
+
+ ;; powerpack 开发服务器
+ :dev-server     {:port 4242}
+
+ ;; 防拷贝
+ :full-skill-rank 5
+ :font-obfuscation {:enabled true
+                    :seed   nil}          ; nil = 每次构建随机；给固定值便于调试
+ :project-reduction []                     ; 打印版裁剪的项目序号（从 1 起，对应 p1..pn）
+ }

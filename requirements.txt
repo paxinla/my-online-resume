@@ -1,9 +1,0 @@
-cssmin
-Jinja2
-jsmin
-Markdown
-MarkupSafe
-pdfkit
-ply
-simplejson
-webassets
