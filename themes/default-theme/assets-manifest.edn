@@ -24,8 +24,11 @@
    :substitute [["@@CV-URL-ROOT@@" :cv-url-root]]}
   {:name   "js/mycv-pre.js"
    :inputs ["js/antiband.js"
-            "js/scrolltop.js"
-            "js/mobile-guard.js"]}]
+            "js/scrolltop.js"]}
+  ;; 移动端降级需在 DOM 解析完成后执行（操作 #whole-page/#content-area），
+  ;; 单独打包并在 </body> 前加载，对齐原实现内联脚本的位置语义
+  {:name   "js/mycv-pre-tail.js"
+   :inputs ["js/mobile-guard.js"]}]
 
  ;; 整目录复制到 output/static/ 下的目录（键=主题内目录，值=输出子目录名）
  :copy {"icons" "icons"
