@@ -49,7 +49,7 @@ jobs:
     - run: java --version
 
     - name: Install clojure tools
-      uses: DeLaGuardo/setup-clojure@13.7
+      uses: DeLaGuardo/setup-clojure@13
       with:
         cli: 1.12.3.1577
     - run: clojure --version
