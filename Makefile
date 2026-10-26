@@ -1,5 +1,5 @@
-CLOJURE := /opt/clojure/bin/clojure
-JAVA    := /opt/jdk-17/bin/java
+CLOJURE := clojure
+JAVA    := java
 # ?= ：环境式（COMPANY=x make local）与参数式（make local COMPANY=x）均可覆盖
 JOB     ?= none
 COMPANY ?= none
